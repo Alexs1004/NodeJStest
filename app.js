@@ -1,5 +1,25 @@
 const validator = require("validator");
 
-const isEmail =  validator.isEmail('foo@bar.com');
+console.log(process.argv)
 
-console.log(isEmail)
+const mails = process.argv[2].split(",")
+ 
+// const mails = [
+//   "jordy@hff.fr",
+//   "nicola@fgkg.ch",
+//   "hfnaki@heool",
+//   "jerome.jeux@french",
+//   "jehrjhpof@orjf.ch"
+// ]
+
+mails.forEach((mail) => {
+console.log(
+  "%s : %s",
+  mail,
+  validator.isEmail(mail) ? "OK" : "KO"
+)
+})
+
+// const isEmail =  validator.isEmail('foo@bar.com');
+
+// console.log(isEmail)
